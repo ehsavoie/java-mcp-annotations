@@ -20,6 +20,22 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
+    
+    <developers>
+        <developer>
+            <id>mcp_java.org</id>
+            <name>MCP Java Community</name>
+            <organization>mcp_java.org</organization>
+            <organizationUrl>https://github.com/mcp-java</organizationUrl>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git@github.com:mcp-java/java-mcp-annotations.git</connection>
+        <developerConnection>scm:git:git@github.com:mcp-java/java-mcp-annotations.git</developerConnection>
+        <tag>HEAD</tag>
+        <url>https://github.com/mcp-java/java-mcp-annotations</url>
+    </scm>
 
     <modules>
         <module>mcp-model</module>
