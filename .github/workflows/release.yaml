@@ -13,7 +13,7 @@ on:
 jobs:
   deploy:
     name: Release on MavenCentral
-    if: ${{ github.ref == 'refs/heads/main' }}
+   # if: ${{ github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -28,10 +28,10 @@ jobs:
           distribution: 'temurin'
           cache: maven
           server-id: central # Value of the distributionManagement/repository/id field of the pom.xml
-          server-username: MAVEN_CENTRAL_USERNAME
-          server-password: MAVEN_CENTRAL_PASSWORD
+          server-username: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
+          server-password: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
           gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
-          gpg-passphrase: GPG_PASSPHRASE
+          gpg-passphrase: ${{ secrets.GPG_PASSPHRASE }}
       - run: |
           git config --global user.name 'MCP Java Project'
           git config --global user.email 'org.mcpjava@gmail.com'
